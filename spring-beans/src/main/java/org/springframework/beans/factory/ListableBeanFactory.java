@@ -226,7 +226,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * backend configuration, as far as possible.
 	 * @param type the class or interface to match, or {@code null} for all concrete beans
 	 * @param includeNonSingletons whether to include prototype or scoped beans too
-	 * or just singletons (also applies to FactoryBeans)
+	 * or just singletons (also applies to FactoryBeans) 是否初始化lazy-init单例
 	 * @param allowEagerInit whether to initialize <i>lazy-init singletons</i> and
 	 * <i>objects created by FactoryBeans</i> (or by factory methods with a
 	 * "factory-bean" reference) for the type check. Note that FactoryBeans need to be

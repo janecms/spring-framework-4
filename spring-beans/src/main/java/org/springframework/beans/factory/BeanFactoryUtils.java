@@ -179,7 +179,7 @@ public abstract class BeanFactoryUtils {
 			HierarchicalBeanFactory hbf = (HierarchicalBeanFactory) lbf;
 			if (hbf.getParentBeanFactory() instanceof ListableBeanFactory) {
 				String[] parentResult = beanNamesForTypeIncludingAncestors(
-						(ListableBeanFactory) hbf.getParentBeanFactory(), type);
+						(ListableBeanFactory) hbf.getParentBeanFactory(), type);//向上递归
 				List<String> resultList = new ArrayList<String>();
 				resultList.addAll(Arrays.asList(result));
 				for (String beanName : parentResult) {
@@ -275,7 +275,7 @@ public abstract class BeanFactoryUtils {
 		return result;
 	}
 
-	/**
+	/**返回给定类型或子类型的所有bean，同时拾取在祖先bean工厂中定义的bean
 	 * Return all beans of the given type or subtypes, also picking up beans defined in
 	 * ancestor bean factories if the current bean factory is a HierarchicalBeanFactory.
 	 * The returned Map will only contain beans of this type.

@@ -161,7 +161,7 @@ public class VersionResourceResolver extends AbstractResourceResolver {
 		if (versionStrategy == null) {
 			return null;
 		}
-
+		//解析出文件名
 		String candidateVersion = versionStrategy.extractVersion(requestPath);
 		if (StringUtils.isEmpty(candidateVersion)) {
 			if (logger.isTraceEnabled()) {

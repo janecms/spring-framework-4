@@ -19,7 +19,7 @@ package org.springframework.web.method.support;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;
 
-/**
+/**用于处理从处理程序方法调用返回的值的Strategy接口
  * Strategy interface to handle the value returned from the invocation of a
  * handler method .
  *

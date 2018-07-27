@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.HandlerMapping;
 
-/**
+/**用于公开与其内部请求匹配配置和实现对齐的请求匹配API
  * Additional interface that a {@link HandlerMapping} can implement to expose
  * a request matching API aligned with its internal request matching
  * configuration and implementation.

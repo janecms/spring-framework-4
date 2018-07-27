@@ -18,7 +18,7 @@ package org.springframework.web.servlet;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
+/**定义requests和handler的mapping
  * Interface to be implemented by objects that define a mapping between
  * requests and handler objects.
  *
@@ -64,7 +64,7 @@ public interface HandlerMapping {
 	 */
 	String PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE = HandlerMapping.class.getName() + ".pathWithinHandlerMapping";
 
-	/**
+	/**最佳匹配模式
 	 * Name of the {@link HttpServletRequest} attribute that contains the
 	 * best matching pattern within the handler mapping.
 	 * <p>Note: This attribute is not required to be supported by all
@@ -74,7 +74,7 @@ public interface HandlerMapping {
 	 */
 	String BEST_MATCHING_PATTERN_ATTRIBUTE = HandlerMapping.class.getName() + ".bestMatchingPattern";
 
-	/**
+	/**是否应检查类型级映射
 	 * Name of the boolean {@link HttpServletRequest} attribute that indicates
 	 * whether type-level mappings should be inspected.
 	 * <p>Note: This attribute is not required to be supported by all

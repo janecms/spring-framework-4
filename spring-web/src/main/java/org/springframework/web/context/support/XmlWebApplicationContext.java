@@ -23,7 +23,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.ResourceEntityResolver;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
-/**
+/** Web上下文 的父类
  * {@link org.springframework.web.context.WebApplicationContext} implementation
  * which takes its configuration from XML documents, understood by an
  * {@link org.springframework.beans.factory.xml.XmlBeanDefinitionReader}.

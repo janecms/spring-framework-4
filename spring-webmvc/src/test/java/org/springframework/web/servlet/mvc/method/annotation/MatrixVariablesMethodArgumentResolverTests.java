@@ -100,8 +100,8 @@ public class MatrixVariablesMethodArgumentResolverTests {
 	@Test
 	public void resolveArgumentPathVariable() throws Exception {
 
-		getMatrixVariables("cars").add("year", "2006");
 		getMatrixVariables("bikes").add("year", "2005");
+		getMatrixVariables("cars").add("year", "2006");
 
 		assertEquals("2006", this.resolver.resolveArgument(this.paramYear, this.mavContainer, this.webRequest, null));
 	}

@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.context.request.NativeWebRequest;
 
-/**
+/**从参数中获取
  * A {@code ContentNegotiationStrategy} that resolves a query parameter to a key
  * to be used to look up a media type. The default parameter name is {@code format}.
  *

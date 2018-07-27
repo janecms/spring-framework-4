@@ -36,7 +36,7 @@ import org.springframework.util.PathMatcher;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.util.UrlPathHelper;
 
-/**
+/**用于获取客户端用于访问静态资源的公共URL路径的中心组件
  * A central component to use to obtain the public URL path that clients should
  * use to access a static resource.
  *

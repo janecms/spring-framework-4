@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Import;
 
-/**
+/**将此annotation添加到@Configuration类
  * Adding this annotation to an {@code @Configuration} class imports the Spring MVC
  * configuration from {@link WebMvcConfigurationSupport}, e.g.:
  *

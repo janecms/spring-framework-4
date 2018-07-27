@@ -187,7 +187,7 @@ public abstract class AbstractHandlerMapping extends WebApplicationObjectSupport
 		return this.pathMatcher;
 	}
 
-	/**
+	/**设置拦截器
 	 * Set the interceptors to apply for all handlers mapped by this handler mapping.
 	 * <p>Supported interceptor types are HandlerInterceptor, WebRequestInterceptor, and MappedInterceptor.
 	 * Mapped interceptors apply only to request URLs that match its path patterns.

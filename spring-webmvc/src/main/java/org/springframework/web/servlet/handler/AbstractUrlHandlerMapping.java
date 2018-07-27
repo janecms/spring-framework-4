@@ -56,7 +56,9 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	private boolean useTrailingSlashMatch = false;
 
 	private boolean lazyInitHandlers = false;
-
+	/**
+	 * hander检索字典
+	 */
 	private final Map<String, Object> handlerMap = new LinkedHashMap<String, Object>();
 
 
@@ -86,14 +88,14 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 		this.useTrailingSlashMatch = useTrailingSlashMatch;
 	}
 
-	/**
+	/**是否匹配URL而不管是否存在尾部斜杠
 	 * Whether to match to URLs irrespective of the presence of a trailing slash.
 	 */
 	public boolean useTrailingSlashMatch() {
 		return this.useTrailingSlashMatch;
 	}
 
-	/**
+	/**设置是否延迟初始化处理程序。仅适用于单例处理程序，因为原型总是被懒惰地初始化。
 	 * Set whether to lazily initialize handlers. Only applicable to
 	 * singleton handlers, as prototypes are always lazily initialized.
 	 * Default is "false", as eager initialization allows for more efficiency
@@ -145,7 +147,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 		return handler;
 	}
 
-	/**
+	/**检索handler, ant,最佳匹配逻辑
 	 * Look up a handler instance for the given URL path.
 	 * <p>Supports direct matches, e.g. a registered "/test" matches "/test",
 	 * and various Ant-style pattern matches, e.g. a registered "/t*" matches
@@ -184,7 +186,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 		}
 		String bestPatternMatch = null;
 		Comparator<String> patternComparator = getPathMatcher().getPatternComparator(urlPath);
-		if (!matchingPatterns.isEmpty()) {
+		if (!matchingPatterns.isEmpty()) {//排序
 			Collections.sort(matchingPatterns, patternComparator);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Matching patterns for request [" + urlPath + "] are " + matchingPatterns);
@@ -235,7 +237,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	protected void validateHandler(Object handler, HttpServletRequest request) throws Exception {
 	}
 
-	/**
+	/**组装为执行器链
 	 * Build a handler object for the given raw handler, exposing the actual
 	 * handler, the {@link #PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE}, as well as
 	 * the {@link #URI_TEMPLATE_VARIABLES_ATTRIBUTE} before executing the handler.

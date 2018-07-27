@@ -31,7 +31,8 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.HandlerMethod;
 
-/**
+/**提供一种方法，用于在通过已注册的HandlerMethodArgumentResolvers解析其方法参数值后为给定请求调用处理程序方法。
+ * 参数解析通常需要WebDataBinder进行数据绑定或类型转换。使用
  * Provides a method for invoking the handler method for a given request after resolving its
  * method argument values through registered {@link HandlerMethodArgumentResolver}s.
  *

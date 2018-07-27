@@ -31,7 +31,7 @@ import org.springframework.util.ObjectUtils;
  * @see #determineUrlsForHandler
  */
 public abstract class AbstractDetectingUrlHandlerMapping extends AbstractUrlHandlerMapping {
-
+	//设置是否在祖先ApplicationContexts中检测
 	private boolean detectHandlersInAncestorContexts = false;
 
 

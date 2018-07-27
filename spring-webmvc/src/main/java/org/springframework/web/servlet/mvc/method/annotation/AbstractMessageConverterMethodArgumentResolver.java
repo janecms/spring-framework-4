@@ -53,7 +53,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 
-/**
+/**用于通过使用HttpMessageConverters从请求主体读取来解析方法参数值的基类
  * A base class for resolving method argument values by reading from the body of
  * a request with {@link HttpMessageConverter}s.
  *

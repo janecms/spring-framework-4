@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.util.StringUtils;
 import org.springframework.web.util.WebUtils;
 
-/**
+/**在自定义设置的情况下，在用户的会话中使用主题属性
  * {@link org.springframework.web.servlet.ThemeResolver} implementation that
  * uses a theme attribute in the user's session in case of a custom setting,
  * with a fallback to the default theme. This is most appropriate if the

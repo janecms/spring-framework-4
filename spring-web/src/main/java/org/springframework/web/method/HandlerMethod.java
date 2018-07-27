@@ -31,6 +31,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
 /**
+ * 封装有关由方法和bean组成的处理程序方法的信息。提供对方法参数，方法返回值，方法注释等的方便访问。
  * Encapsulates information about a handler method consisting of a
  * {@linkplain #getMethod() method} and a {@linkplain #getBean() bean}.
  * Provides convenient access to method parameters, the method return value,

@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.core.io.Resource;
 
-/**
+/**用于调用ResourceResolvers链的合同，其中每个解析器都被赋予对链的引用
  * A contract for invoking a chain of {@link ResourceResolver}s where each resolver
  * is given a reference to the chain allowing it to delegate when necessary.
  *

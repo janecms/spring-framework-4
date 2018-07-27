@@ -19,7 +19,8 @@ package org.springframework.web.servlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
+/**基于Web的主题解析策略的接口，允许通过请求进行主题解析，并通过请求和响应进行主题修改。<br/>
+ * 此接口允许基于会话，cookie等的实现
  * Interface for web-based theme resolution strategies that allows for
  * both theme resolution via the request and theme modification via
  * request and response.

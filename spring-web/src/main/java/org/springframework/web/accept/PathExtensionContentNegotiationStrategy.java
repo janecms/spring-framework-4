@@ -38,7 +38,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.UrlPathHelper;
 
-/**
+/**从请求路径中解析
  * A {@code ContentNegotiationStrategy} that resolves the file extension in the
  * request path to a key to be used to look up a media type.
  *

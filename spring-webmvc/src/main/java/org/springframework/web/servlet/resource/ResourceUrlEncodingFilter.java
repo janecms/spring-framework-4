@@ -81,6 +81,7 @@ public class ResourceUrlEncodingFilter extends OncePerRequestFilter {
 				int suffixIndex = getQueryParamsIndex(url);
 				String suffix = url.substring(suffixIndex);
 				String lookupPath = url.substring(this.indexLookupPath, suffixIndex);
+				//包装资源路径
 				lookupPath = resourceUrlProvider.getForLookupPath(lookupPath);
 				if (lookupPath != null) {
 					return super.encodeURL(this.prefixLookupPath + lookupPath + suffix);

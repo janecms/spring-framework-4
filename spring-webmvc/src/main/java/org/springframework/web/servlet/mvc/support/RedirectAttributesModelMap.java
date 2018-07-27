@@ -22,7 +22,7 @@ import java.util.Map;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.DataBinder;
 
-/**
+/**提供了存储Flash属性的位置，以便它们可以在重定向中存活
  * A {@link ModelMap} implementation of {@link RedirectAttributes} that formats
  * values as Strings using a {@link DataBinder}. Also provides a place to store
  * flash attributes so they can survive a redirect without the need to be
