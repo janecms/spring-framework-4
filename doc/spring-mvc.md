@@ -1441,3 +1441,21 @@ resolvers.add(new ServletModelAttributeMethodProcessor(true));
 ```
 
 至此，真相大白。
+
+
+### HandlerAdapter 真正负责具体处理http请求
+- HttpRequestHandlerAdapter 处理 org.springframework.web.HttpRequestHandler
+- RequestMappingHandlerAdapter处理 org.springframework.web.method.HandlerMethod
+- SimpleControllerHandlerAdapter 处理org.springframework.web.servlet.mvc.Controller
+- SimpleServletHandlerAdapter处理javax.servlet.Servlet
+
+> @RequestMapping注解的方法，会被解析成 HandlerMethod 
+
+
+### org.springframework.web.servlet.HandlerMapping
+- RequestMappingHandlerMapping 处理@Controller,@RequestMapping
+- BeanNameUrlHandlerMapping 处理url到beanName的映射
+- SimpleUrlHandlerMapping  通过urlMap管理到bean的映射
+- ControllerBeanNameHandlerMapping
+- ControllerClassNameHandlerMapping
+- StaticRequestMappingHandlerMapping

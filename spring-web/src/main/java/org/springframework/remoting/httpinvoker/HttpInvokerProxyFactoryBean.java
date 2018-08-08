@@ -19,7 +19,13 @@ package org.springframework.remoting.httpinvoker;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.factory.FactoryBean;
 
-/**
+/** http 远程调用代理
+ * <code>
+ *<bean id="httpInvokerProxy" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+ <property name="serviceUrl" value="http://127.0.0.1:8080/spring4/AccountService"/>
+ <property name="serviceInterface" value="com.hellojd.mvcshark.service.IAccountService"/>
+ </bean>
+ * </code>
  * {@link FactoryBean} for HTTP invoker proxies. Exposes the proxied service
  * for use as a bean reference, using the specified service interface.
  *

@@ -1,18 +1,18 @@
-/*
- * Copyright 2002-2016 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+///*
+// * Copyright 2002-2016 the original author or authors.
+// *
+// * Licensed under the Apache License, Version 2.0 (the "License");
+// * you may not use this file except in compliance with the License.
+// * You may obtain a copy of the License at
+// *
+// *      http://www.apache.org/licenses/LICENSE-2.0
+// *
+// * Unless required by applicable law or agreed to in writing, software
+// * distributed under the License is distributed on an "AS IS" BASIS,
+// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// * See the License for the specific language governing permissions and
+// * limitations under the License.
+// */
 
 package org.springframework.web.servlet.mvc.method.annotation;
 
@@ -117,7 +117,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 		implements BeanFactoryAware, InitializingBean {
 
 	private List<HandlerMethodArgumentResolver> customArgumentResolvers;
-
+	//解析 model
 	private HandlerMethodArgumentResolverComposite argumentResolvers;
 
 	private HandlerMethodArgumentResolverComposite initBinderArgumentResolvers;
@@ -409,7 +409,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 		this.deferredResultInterceptors = interceptors.toArray(new DeferredResultProcessingInterceptor[interceptors.size()]);
 	}
 
-	/**
+	/**将此标志设置为true可确保即使未声明RedirectAttributes参数，也不会在重定向方案中使用“默认”模型。
 	 * By default the content of the "default" model is used both during
 	 * rendering and redirect scenarios. Alternatively a controller method
 	 * can declare a {@link RedirectAttributes} argument and use it to provide
@@ -457,7 +457,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 		this.cacheSecondsForSessionAttributeHandlers = cacheSecondsForSessionAttributeHandlers;
 	}
 
-	/**
+	/**mutex:互斥
 	 * Set if controller execution should be synchronized on the session,
 	 * to serialize parallel invocations from the same client.
 	 * <p>More specifically, the execution of the {@code handleRequestInternal}
@@ -572,8 +572,8 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 			this.requestResponseBodyAdvice.addAll(0, requestResponseBodyAdviceBeans);
 		}
 	}
-
-	/**
+// FIXME: 2018/8/2 初始化参数解析：注解
+	/** 
 	 * Return the list of argument resolvers to use including built-in resolvers
 	 * and custom resolvers provided via {@link #setCustomArgumentResolvers}.
 	 */
@@ -883,6 +883,7 @@ public class RequestMappingHandlerAdapter extends AbstractHandlerMethodAdapter
 		Class<?> handlerType = handlerMethod.getBeanType();
 		Set<Method> methods = this.initBinderCache.get(handlerType);
 		if (methods == null) {
+			//扫描InitBinder 声明的方法
 			methods = MethodIntrospector.selectMethods(handlerType, INIT_BINDER_METHODS);
 			this.initBinderCache.put(handlerType, methods);
 		}

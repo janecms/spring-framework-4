@@ -28,7 +28,7 @@ import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.context.WebApplicationContext;
 
-/**
+/** 代理HttpRequestHandler处理请求
  * Simple HttpServlet that delegates to an {@link HttpRequestHandler} bean defined
  * in Spring's root web application context. The target bean name must match the
  * HttpRequestHandlerServlet servlet-name as defined in {@code web.xml}.

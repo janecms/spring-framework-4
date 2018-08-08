@@ -109,7 +109,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 	}
 
 
-	/**
+	/**在给定请求的上下文中解析其参数值后调用该方法<br/>
 	 * Invoke the method after resolving its argument values in the context of the given request.
 	 * <p>Argument values are commonly resolved through {@link HandlerMethodArgumentResolver}s.
 	 * The {@code providedArgs} parameter however may supply argument values to be used directly,
@@ -125,7 +125,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 	 */
 	public Object invokeForRequest(NativeWebRequest request, ModelAndViewContainer mavContainer,
 			Object... providedArgs) throws Exception {
-
+		//转换并绑定
 		Object[] args = getMethodArgumentValues(request, mavContainer, providedArgs);
 		if (logger.isTraceEnabled()) {
 			StringBuilder sb = new StringBuilder("Invoking [");

@@ -31,7 +31,7 @@ import org.springframework.web.bind.support.SessionAttributeStore;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 
-/**
+/**处理SessionAttributes注解
  * Manages controller-specific session attributes declared via
  * {@link SessionAttributes @SessionAttributes}. Actual storage is
  * delegated to a {@link SessionAttributeStore} instance.
@@ -67,7 +67,7 @@ public class SessionAttributesHandler {
 	public SessionAttributesHandler(Class<?> handlerType, SessionAttributeStore sessionAttributeStore) {
 		Assert.notNull(sessionAttributeStore, "SessionAttributeStore may not be null");
 		this.sessionAttributeStore = sessionAttributeStore;
-
+		//初始化
 		SessionAttributes annotation =
 				AnnotatedElementUtils.findMergedAnnotation(handlerType, SessionAttributes.class);
 		if (annotation != null) {

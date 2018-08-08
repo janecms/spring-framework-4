@@ -49,7 +49,7 @@ public class InitBinderDataBinderFactory extends DefaultDataBinderFactory {
 		this.binderMethods = (binderMethods != null) ? binderMethods : new ArrayList<InvocableHandlerMethod>();
 	}
 
-	/**
+	/**调用@InitBinder 声明的方法
 	 * Initialize a WebDataBinder with {@code @InitBinder} methods.
 	 * If the {@code @InitBinder} annotation specifies attributes names, it is
 	 * invoked only if the names include the target object name.

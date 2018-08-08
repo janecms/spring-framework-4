@@ -56,7 +56,12 @@ abstract class MvcNamespaceUtils {
 
 	private static final String CORS_CONFIGURATION_BEAN_NAME = "mvcCorsConfigurations";
 
-
+	/**
+	 * 保证初始化1次
+	 * 注册默认的BeanNameUrlHandlerMapping,HttpRequestHandlerAdapter,SimpleControllerHandlerAdapter
+ 	 * @param parserContext
+	 * @param source
+	 */
 	public static void registerDefaultComponents(ParserContext parserContext, Object source) {
 		registerBeanNameUrlHandlerMapping(parserContext, source);
 		registerHttpRequestHandlerAdapter(parserContext, source);

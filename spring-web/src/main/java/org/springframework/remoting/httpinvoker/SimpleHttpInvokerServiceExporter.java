@@ -30,7 +30,7 @@ import org.springframework.remoting.rmi.RemoteInvocationSerializingExporter;
 import org.springframework.remoting.support.RemoteInvocation;
 import org.springframework.remoting.support.RemoteInvocationResult;
 
-/**
+/**暴露http 服务
  * HTTP request handler that exports the specified service bean as
  * HTTP invoker service endpoint, accessible via an HTTP invoker proxy.
  * Designed for Sun's JRE 1.6 HTTP server, implementing the

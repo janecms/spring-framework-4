@@ -40,7 +40,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 /**
  * Resolve {@code @ModelAttribute} annotated method arguments and handle
  * return values from {@code @ModelAttribute} annotated methods.
- *
+ *创建后，通过数据绑定到Servlet请求参数来填充属性
  * <p>Model attributes are obtained from the model or created with a default
  * constructor (and then added to the model). Once created the attribute is
  * populated via data binding to Servlet request parameters. Validation may be

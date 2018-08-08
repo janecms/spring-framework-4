@@ -18,7 +18,7 @@ package org.springframework.transaction.support;
 
 import java.io.Flushable;
 
-/**
+/**事务同步回调的接口<br/>
  * Interface for transaction synchronization callbacks.
  * Supported by AbstractPlatformTransactionManager.
  *
@@ -47,14 +47,14 @@ public interface TransactionSynchronization extends Flushable {
 	int STATUS_UNKNOWN = 2;
 
 
-	/**
+	/**暂停此同步。如果管理任何资源，则假定从TransactionSynchronizationManager取消绑定资源。
 	 * Suspend this synchronization.
 	 * Supposed to unbind resources from TransactionSynchronizationManager if managing any.
 	 * @see TransactionSynchronizationManager#unbindResource
 	 */
 	void suspend();
 
-	/**
+	/**恢复此同步。如果管理任何资源，则假定将资源重新绑定到TransactionSynchronizationManager。
 	 * Resume this synchronization.
 	 * Supposed to rebind resources to TransactionSynchronizationManager if managing any.
 	 * @see TransactionSynchronizationManager#bindResource

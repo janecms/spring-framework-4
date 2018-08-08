@@ -31,7 +31,7 @@ import org.springframework.core.NamedThreadLocal;
 import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 import org.springframework.util.Assert;
 
-/**
+/**管理每个线程的资源和事务同步的中央代理<br/>
  * Central delegate that manages resources and transaction synchronizations per thread.
  * To be used by resource management code but not by typical application code.
  *
@@ -222,7 +222,7 @@ public abstract class TransactionSynchronizationManager {
 		return doUnbindResource(actualKey);
 	}
 
-	/**
+	/**所谓的事务挂起其实就是一个移除当前线程、数据源活动事务对象的过程
 	 * Actually remove the value of the resource that is bound for the given key.
 	 */
 	private static Object doUnbindResource(Object actualKey) {

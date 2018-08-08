@@ -24,7 +24,8 @@ import java.lang.annotation.Target;
 
 import org.springframework.core.annotation.AliasFor;
 
-/**
+/**表示方法参数应绑定到Web请求标头<br/>
+ fixme RequestHeaderMethodArgumentResolver
  * Annotation which indicates that a method parameter should be bound to a web request header.
  *
  * <p>Supported for annotated handler methods in Servlet and Portlet environments.

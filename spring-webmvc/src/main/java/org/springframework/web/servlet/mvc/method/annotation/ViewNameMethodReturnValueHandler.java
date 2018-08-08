@@ -23,7 +23,7 @@ import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.RequestToViewNameTranslator;
 
-/**
+/**将字符串渲染成页面
  * Handles return values of types {@code void} and {@code String} interpreting them
  * as view name reference. As of 4.2, it also handles general {@code CharSequence}
  * types, e.g. {@code StringBuilder} or Groovy's {@code GString}, as view names.
