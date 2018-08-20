@@ -121,7 +121,9 @@ public abstract class HttpServletBean extends HttpServlet
 		// Set bean properties from init parameters.
 		try {
 			PropertyValues pvs = new ServletConfigPropertyValues(getServletConfig(), this.requiredProperties);
+			//包装DispatcherServlet，准备放入容器
 			BeanWrapper bw = PropertyAccessorFactory.forBeanPropertyAccess(this);
+			//用以加载spring-mvc配置文件
 			ResourceLoader resourceLoader = new ServletContextResourceLoader(getServletContext());
 			bw.registerCustomEditor(Resource.class, new ResourceEditor(resourceLoader, getEnvironment()));
 			initBeanWrapper(bw);

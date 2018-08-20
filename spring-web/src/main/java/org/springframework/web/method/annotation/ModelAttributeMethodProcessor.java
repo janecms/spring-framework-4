@@ -107,12 +107,12 @@ public class ModelAttributeMethodProcessor
 				mavContainer.setBindingDisabled(name);
 			}
 		}
-
+		//绑定model
 		WebDataBinder binder = binderFactory.createBinder(webRequest, attribute, name);
 		if (binder.getTarget() != null) {
 			if (!mavContainer.isBindingDisabled(name)) {
 				bindRequestParameters(binder, webRequest);
-			}
+			}//验证
 			validateIfApplicable(binder, parameter);
 			if (binder.getBindingResult().hasErrors() && isBindExceptionRequired(binder, parameter)) {
 				throw new BindException(binder.getBindingResult());

@@ -1,3 +1,59 @@
+# 流程
+
+## 初始化流程
+
+- 1.`ContextLoaderListener`初始化业务spring context，根据`ContextLoader.properties`文件
+
+- 2.DispatcherServlet初始化，按照`DispatcherServlet.properties`，初始化默认组件
+
+- 3.初始化springmvc 上下文,维护父子关系
+
+- 4.初始化springmvc 上下文，解析配置，annotation ,xml
+
+- 4.1初始化 *HandlerMapping 组件，维护HandlerMethod与url映射关系
+
+- 4.2 初始化mvc组件MultipartResolver，LocaleResolver,ThemeResolver,HandlerAdapter,
+
+  HandlerExceptionResolver,RequestToViewNameTranslator,ViewResolver,FlashMapManager
+
+## 请求流程
+
+- 1.请求上下文，初始化LocaleContext，RequestAttributes
+
+- 2.如果是multipart请求，解析之
+
+- 3.确定Handler, 获取链结构 HandlerExecutionChain(handler+HandlerInterceptor).
+
+- 4.选择HandlerAdapter，
+
+- 5.HandlerInterceptor.applyPreHandle
+
+- 6.执行ha的handle
+
+  - 6.1 组装ServletInvocableHandlerMethod，
+
+  - 6.2 initModel(ModelAttribute,sessionAttribute),放入ModelAndViewContainer
+
+  - 6.3 ServletInvocableHandlerMethod 方法调用。
+
+    - HandlerMethodArgumentResolver调用，负责解析参数，如果为Model,会发生绑定调用
+
+    - 选择HandlerMethodReturnValueHandler 调用
+
+  6.4 ModelAndView, 如果发生异常使用HandlerExceptionResolver
+
+- 7.invoke HandlerInterceptor.postHandle
+
+- 8.渲染ModelAndView
+
+- 8.1 选择合适ViewResolver
+
+- 9.HandlerInterceptor.afterCompletion
+
+  
+
+  
+
 # 初始化
 
 spring-mvc的核心便是DispatcherServlet，所以初始化也是围绕其展开的。类图:

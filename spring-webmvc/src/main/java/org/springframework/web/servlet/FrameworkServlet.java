@@ -510,7 +510,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		}
 	}
 
-	/**
+	/**初始化webconext 上下文，父子关系
 	 * Initialize and publish the WebApplicationContext for this servlet.
 	 * <p>Delegates to {@link #createWebApplicationContext} for actual creation
 	 * of the context. Can be overridden in subclasses.
@@ -596,7 +596,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		return wac;
 	}
 
-	/**
+	/**创建context,初始化 ApplicationContextInitializer
 	 * Instantiate the WebApplicationContext for this servlet, either a default
 	 * {@link org.springframework.web.context.support.XmlWebApplicationContext}
 	 * or a {@link #setContextClass custom context class}, if set.
@@ -806,7 +806,7 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 		onRefresh(event.getApplicationContext());
 	}
 
-	/**
+	/**context refresh之后，进行servlet特定工作
 	 * Template method which can be overridden to add servlet-specific refresh work.
 	 * Called after successful context refresh.
 	 * <p>This implementation is empty.
